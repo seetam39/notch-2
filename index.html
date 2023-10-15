@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        *{
+            padding:0%;
+            margin:0%;
+            border:box-border;
+        }
+        #body{
+            display:flex;
+            justify-content: center;
+            background-image:url("wall5.jpg");
+            background-repeat: no-repeat;
+            background-size:100%;
+            
+        }
+        #notch{
+            height:33px;
+            width:35%;
+            border:2px solid black;
+            border-bottom-left-radius:18px ;
+            border-bottom-right-radius:18px ;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            position:fixed;
+            top:0%;
+            background-color: black;
+        }
+
+
+        .line{
+            height:5px;
+            width:40px;
+            border-radius:10px;
+            background-color: rgb(24, 24, 24);
+        }
+
+        .camera{
+            height:12px;
+            width:12px;
+            border-radius: 50%;
+            background-color:rgb(24,24,24);
+           position:absolute;
+           right:50px;
+           display:flex;
+           justify-content: center;
+           align-items: center;
+        }
+
+        .camera-lens{
+            height:7px;
+            width:7px;
+            border-radius:50%;
+            background-color:navy;
+        }
+
+        .light{
+            height:5px;
+            width:5px;
+            border-radius:50%;
+            background-color:white;
+            position:absolute;
+            bottom:18px;
+            right:15px;
+        }
+    </style>
+</head>
+<body id="body">
+    <div id="notch">
+        <div class="line"></div>
+        <div class="camera">
+            <div class="camera-lens" id="btn"></div>
+        </div>
+        <div class="light"></div>
+    </div>
+    
+
+    <script>
+        let btn=document.getElementById("btn");
+        let notch=document.getElementById("notch");
+        let body=document.getElementById("body");
+        let mark=1;
+       notch.addEventListener("click",function(){
+        if(mark==1){
+        body.style.backgroundImage="url('wall6.jpg')"
+        mark=2;
+        }
+        else if(mark==2){
+        body.style.backgroundImage="url('wall7.jpg')"
+        notch.style.border="0.01px solid white"
+        mark=2;
+        }
+        else{
+        body.style.backgroundImage="url('wall5.jpg')"
+        mark=1;
+        }
+       })
+    </script>
+</body>
+</html>
